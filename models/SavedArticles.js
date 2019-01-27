@@ -4,6 +4,11 @@ var Schema = mongoose.Schema;
 
 var SavedArticleSchema = new Schema ({
 
+    image: {
+        type: String,
+        required: true
+    },
+    
     title: {
         type: String,
         required: true
