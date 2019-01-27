@@ -1,25 +1,15 @@
-#head {
-    color: grey;
-    text-align: center;
-    margin-top: 2%;
+body {
+    background-image: url("http://static.tumblr.com/5yihavp/ramlyj2ds/tumblr_ltedemoql81r3vazto1_1280.png");
 }
 
 #pic {
-    height: 100px;
-    width: 200px;
+    height: 200px;
+    width: 400px;
 }
 
 #nav {
     text-align: center;
     margin-top: 3%;
-}
-
-#contentbox {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-top: 4%;
-    margin-left: 15%;
-    margin-right: 15%;
-    border-radius: 25px;
 }
 
 #articledump {
@@ -32,8 +22,7 @@
 
 #descdump {
     text-align: center;
-    margin: 5%;
-    
+    margin: 5%;    
 }
 
 #savebtn {
@@ -50,7 +39,33 @@
 #wrapper {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-top: 4%;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
     border-radius: 25px;
+    background-color: white;
+}
+
+img {
+    height: 200px;
+    width: 300px;
+}
+
+img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.header{
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    color: lightblue;
+}
+
+.subheader{
+    font-family: 'Bree Serif', serif;
+    color: lightgrey;
+}
+
+a {
+    text-decoration: none;
 }

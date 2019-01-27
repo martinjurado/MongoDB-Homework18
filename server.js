@@ -35,42 +35,55 @@ app.get("/scrape", function (req, res) {
         var $ = cheerio.load(response.data);
 
         $(".el").each(function (i, element) {
-            
+
             // Empty Object to save the data scraped
             var result = {};
 
             // Image
-            $(this).find(".eH .ju").each(function(i, element) {
+            $(this).find(".eH .ju").each(function (i, element) {
                 result.image = $(this).text();
             });
-            
+
             // Title of article
-            $(this).find(".eH .en .ez").each(function(i, element){
+            $(this).find(".eH .en .ez").each(function (i, element) {
                 result.title = $(this).text();
             });
 
             // Author 
-            $(this).find(".eH .en .eA").each(function(i, element){
+            $(this).find(".eH .en .eA").each(function (i, element) {
                 result.subtitle = $(this).text();
             });
-            
+
             // Link to article
             result.link = $(this).attr("href");
-            
-        
+
+
             console.log(result);
 
             db.Article.create(result)
-            .then(function(dbArticle){
-                console.log(dbArticle);
-            })
-            .catch(function(err) {
-                console.log(err)
-            });
+                .then(function (dbArticle) {
+                    console.log(dbArticle);
+                })
+                .catch(function (err) {
+                    console.log(err)
+                });
         });
-        
         res.send("Scrape Complete!");
     });
+});
+
+// display all articles
+app.get("/showall", function (req, res) {
+
+    db.Article.find({})
+        .then(function (dbArticle) {
+            res.json(dbArticle);
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+    
+        res.render("home")
 });
 
 app.listen(PORT, function () {
