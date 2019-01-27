@@ -85,6 +85,10 @@ function showSaved() {
                 + "Delete"
                 + "</button>"
                 + " "
+                + "<button class='btn btn-success postbtn' data-id='" + data[i]._id + "'>"
+                + "Add Note"
+                + "</button>"
+                + " "
                 + "<a href='" + "https://www.elitedaily.com" + data[i].link + "'" + 'target="blank"' + "'>"
                 + "<button class='btn btn-info'>"
                 + "Read More"
@@ -106,6 +110,14 @@ function showSaved() {
         }
     })
 };
+
+$(document).on("click", ".postbtn", function () {
+    event.preventDefault;
+
+    console.log("test");
+
+    $("#notemodal").modal("toggle");
+});
 
 $(document).ready(function () {
     showSaved();
