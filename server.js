@@ -20,8 +20,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Connect to the DB
-mongoose.connect("mongodb://localhost/elitedatabase", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/elitedatabase";
+
+mongoose.connect(MONGODB_URI)
+
+// // Connect to the DB
+// mongoose.connect("mongodb://localhost/elitedatabase", { useNewUrlParser: true });
 
 // Home page
 app.get('/', function (req, res) {

@@ -114,8 +114,6 @@ function showSaved() {
 $(document).on("click", ".postbtn", function () {
     event.preventDefault;
 
-    console.log("test");
-
     $("#notemodal").modal("toggle");
 });
 
