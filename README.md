@@ -11,5 +11,7 @@ The Mongo Scraper app scrapes from the Elite Daily website and populates the app
 * Handlebars
 * CSS
 
+![](cover.png)
+
 ## Link
 Click here to get a preview of my app: https://powerful-crag-21526.herokuapp.com/
